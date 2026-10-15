@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "skyblock-enhanced",
+  "version": "${version}",
+  "name": "skyblock-enhanced",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/skyblock-enhanced/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.qwonix.skyblockEnhanced.client.SkyblockEnhancedDataGenerator"
+    ],
+    "client": [
+      "org.qwonix.skyblockEnhanced.client.SkyblockEnhancedClient"
+    ],
+    "main": [
+      "org.qwonix.skyblockEnhanced.SkyblockEnhanced"
+    ]
+  },
+  "mixins": [
+    "skyblock-enhanced.mixins.json",
+    {
+      "config": "skyblock-enhanced.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
